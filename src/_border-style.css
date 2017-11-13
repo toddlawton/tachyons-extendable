@@ -1,0 +1,80 @@
+/*
+
+   BORDER STYLES
+   Docs: http://tachyons.io/docs/themes/borders/
+
+   Depends on base border module in _borders.css
+
+   Base:
+     b = border-style
+
+   Modifiers:
+     --none   = none
+     --dotted = dotted
+     --dashed = dashed
+     --solid  = solid
+
+   Media Query Extensions:
+     -ns = not-small
+     -m  = medium
+     -l  = large
+
+ */
+
+%b--dotted {
+  border-style: dotted;
+}
+%b--dashed {
+  border-style: dashed;
+}
+%b--solid {
+  border-style: solid;
+}
+%b--none {
+  border-style: none;
+}
+
+@media (--breakpoint-not-small) {
+  %b--dotted-ns {
+    @extend %b--dotted;
+  }
+  %b--dashed-ns {
+    @extend %b--dashed;
+  }
+  %b--solid-ns {
+    @extend %b--solid;
+  }
+  %b--none-ns {
+    @extend %b--none;
+  }
+}
+
+@media (--breakpoint-medium) {
+  %b--dotted-m {
+    @extend %b--dotted;
+  }
+  %b--dashed-m {
+    @extend %b--dashed;
+  }
+  %b--solid-m {
+    @extend %b--solid;
+  }
+  %b--none-m {
+    @extend %b--none;
+  }
+}
+
+@media (--breakpoint-large) {
+  %b--dotted-l {
+    @extend %b--dotted;
+  }
+  %b--dashed-l {
+    @extend %b--dashed;
+  }
+  %b--solid-l {
+    @extend %b--solid;
+  }
+  %b--none-l {
+    @extend %b--none;
+  }
+}
