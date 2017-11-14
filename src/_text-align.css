@@ -18,25 +18,20 @@
 
 */
 
-.tl  { text-align: left; }
-.tr  { text-align: right; }
-.tc  { text-align: center; }
+%tl  { text-align: left; }
+%tr  { text-align: right; }
+%tc  { text-align: center; }
 
-@media (--breakpoint-not-small) {
-  .tl-ns  { text-align: left; }
-  .tr-ns  { text-align: right; }
-  .tc-ns  { text-align: center; }
+@each $bkpt, $nmsp in (--breakpoint-not-small, --breakpoint-medium, --breakpoint-large), (ns, m, l) {
+  @media ($bkpt) {
+    %tl-$(nmsp) {
+      @extend %tl;
+    }
+    %tr-$(nmsp) {
+      @extend %tr;
+    }
+    %tc-$(nmsp) {
+      @extend %tc;
+    }
+  }
 }
-
-@media (--breakpoint-medium) {
-  .tl-m  { text-align: left; }
-  .tr-m  { text-align: right; }
-  .tc-m  { text-align: center; }
-}
-
-@media (--breakpoint-large) {
-  .tl-l  { text-align: left; }
-  .tr-l  { text-align: right; }
-  .tc-l  { text-align: center; }
-}
-

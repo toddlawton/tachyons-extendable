@@ -10,20 +10,16 @@
 
 */
 
-.i         { font-style: italic; }
-.fs-normal { font-style: normal; }
+%i         { font-style: italic; }
+%fs-normal { font-style: normal; }
 
-@media (--breakpoint-not-small) {
-  .i-ns       { font-style: italic; }
-  .fs-normal-ns     { font-style: normal; }
-}
-
-@media (--breakpoint-medium) {
-  .i-m       { font-style: italic; }
-  .fs-normal-m     { font-style: normal; }
-}
-
-@media (--breakpoint-large) {
-  .i-l       { font-style: italic; }
-  .fs-normal-l     { font-style: normal; }
+@each $bkpt, $nmsp in (--breakpoint-not-small, --breakpoint-medium, --breakpoint-large), (ns, m, l) {
+  @media ($bkpt) {
+    %i-$(nmsp) {
+      @extend %i;
+    }
+    %fs-normal-$(nmsp) {
+      @extend %fs-normal;
+    }
+  }
 }

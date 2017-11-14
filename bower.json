@@ -1,6 +1,6 @@
 {
-  "name": "tachyons-custom",
-  "description": "Functional CSS for humans",
+  "name": "tachyons-extendable",
+  "description": "Extendable functional CSS for humans",
   "main": "css/tachyons.min.css",
   "authors": [
     "mrmrs"

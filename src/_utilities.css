@@ -9,42 +9,32 @@
 
 */
 
-/* Equivalent to .overflow-y-scroll */
-.overflow-container {
+/* Equivalent to %overflow-y-scroll */
+%overflow-container {
   overflow-y: scroll;
 }
 
-.center {
+%center {
   margin-right: auto;
   margin-left: auto;
 }
 
-.mr-auto { margin-right: auto; }
-.ml-auto { margin-left:  auto; }
+%mr-auto { margin-right: auto; }
+%ml-auto { margin-left:  auto; }
 
-@media (--breakpoint-not-small){
-  .center-ns {
-    margin-right: auto;
-    margin-left: auto;
+@each $bkpt, $nmsp in (--breakpoint-not-small, --breakpoint-medium, --breakpoint-large), (ns, m, l) {
+  @media ($bkpt) {
+    %overflow-container-$(nmsp) {
+      @extend %overflow-container;
+    }
+    %center-$(nmsp) {
+      @extend %center;
+    }
+    %mr-auto-$(nmsp) {
+      @extend %mr-auto;
+    }
+    %ml-auto-$(nmsp) {
+      @extend %ml-auto;
+    }
   }
-  .mr-auto-ns { margin-right: auto; }
-  .ml-auto-ns { margin-left:  auto; }
-}
-
-@media (--breakpoint-medium){
-  .center-m {
-    margin-right: auto;
-    margin-left: auto;
-  }
-  .mr-auto-m { margin-right: auto; }
-  .ml-auto-m { margin-left:  auto; }
-}
-
-@media (--breakpoint-large){
-  .center-l {
-    margin-right: auto;
-    margin-left: auto;
-  }
-  .mr-auto-l { margin-right: auto; }
-  .ml-auto-l { margin-left:  auto; }
 }

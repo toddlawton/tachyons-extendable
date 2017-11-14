@@ -8,10 +8,10 @@
 /* Nicolas Gallaghers Clearfix solution
    Ref: http://nicolasgallagher.com/micro-clearfix-hack/ */
 
-.cf:before,
-.cf:after { content: " "; display: table; }
-.cf:after { clear: both; }
-.cf {       *zoom: 1; }
+%cf:before,
+%cf:after { content: " "; display: table; }
+%cf:after { clear: both; }
+%cf {       *zoom: 1; }
 
 %cl { clear: left; }
 %cr { clear: right; }
