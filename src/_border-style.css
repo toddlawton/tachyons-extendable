@@ -34,47 +34,19 @@
   border-style: none;
 }
 
-@media (--breakpoint-not-small) {
-  %b--dotted-ns {
-    @extend %b--dotted;
-  }
-  %b--dashed-ns {
-    @extend %b--dashed;
-  }
-  %b--solid-ns {
-    @extend %b--solid;
-  }
-  %b--none-ns {
-    @extend %b--none;
-  }
-}
-
-@media (--breakpoint-medium) {
-  %b--dotted-m {
-    @extend %b--dotted;
-  }
-  %b--dashed-m {
-    @extend %b--dashed;
-  }
-  %b--solid-m {
-    @extend %b--solid;
-  }
-  %b--none-m {
-    @extend %b--none;
-  }
-}
-
-@media (--breakpoint-large) {
-  %b--dotted-l {
-    @extend %b--dotted;
-  }
-  %b--dashed-l {
-    @extend %b--dashed;
-  }
-  %b--solid-l {
-    @extend %b--solid;
-  }
-  %b--none-l {
-    @extend %b--none;
+@each $bkpt, $nmsp in (--breakpoint-not-small, --breakpoint-medium, --breakpoint-large), (ns, m, l) {
+  @media ($bkpt) {
+    %b--dotted-$(nmsp) {
+      @extend %b--dotted;
+    }
+    %b--dashed-$(nmsp) {
+      @extend %b--dashed;
+    }
+    %b--solid-$(nmsp) {
+      @extend %b--solid;
+    }
+    %b--none-$(nmsp) {
+      @extend %b--none;
+    }
   }
 }

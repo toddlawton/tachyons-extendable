@@ -37,6 +37,6 @@ input[type="password"],
 input[type="tel"],
 input[type="text"],
 input[type="url"],
-.border-box {
+%border-box {
   box-sizing: border-box;
 }
