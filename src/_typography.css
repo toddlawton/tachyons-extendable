@@ -52,7 +52,7 @@
       @extend %measure;
     }
     %measure-wide-$(nmsp) {
-      @extend %measure-widefr;
+      @extend %measure-wide;
     }
     %measure-narrow-$(nmsp) {
       @extend %measure-narrow;
