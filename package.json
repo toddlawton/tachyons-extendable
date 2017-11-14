@@ -1,6 +1,6 @@
 {
   "name": "tachyons-extendable",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Extendable functional CSS for humans",
   "author": "toddlawton",
   "main": "src/tachyons.css",
